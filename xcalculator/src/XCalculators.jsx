@@ -17,7 +17,11 @@ const XCalculators = () => {
 
   const handleCalculate = () => {
     try {
-      setResult(calculate(expression));
+      if (expression.trim() === '') {
+        setResult('Error');
+      } else {
+        setResult(calculate(expression));
+      }
     } catch (error) {
       setResult('Error');
     }
